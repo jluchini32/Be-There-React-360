@@ -123,7 +123,6 @@ class ScenePage extends React.Component {
 
   _onListClick = (listIndex) => {
     this.props.setBandIndex(listIndex);
-    this.props.s
   };
 
 

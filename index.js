@@ -11,6 +11,7 @@ import {
 } from 'react-360';
 import InfoButton from 'InfoButton.react';
 import ScenePage from 'ScenePage.react';
+import BackButton from 'BackButton.react';
 
 
 
@@ -91,20 +92,7 @@ export default class BasicAppTemplate extends React.Component {
         Click One of The Genres Below
         </Text>
       </View>
-
-      {/* <View>
-        <VrButton>
-          <Text>refresh</Text>
-          _onClick = (index) => {
-            window.location.reload()
-          };
-        </VrButton>
-      </View> */}
-
-
-     
-
-
+    
 
 {/* Renders genre text based on state       */}
     <View>
@@ -149,8 +137,23 @@ export default class BasicAppTemplate extends React.Component {
             index={this.state.index}
             />
         </View>
-      </View>
       
+         {/* Back button */}
+         <View >
+         {
+           this.state.isBand === true ? 
+     
+               <BackButton>
+               </BackButton>
+ 
+                   : null
+         }
+         </View>
+
+
+      </View>
+
+
     ); 
   }
 };
@@ -193,21 +196,14 @@ const styles = StyleSheet.create({
   hellobox: {
     fontSize: 60,
     fontWeight: '800',
-    // lineHeight: 500,
     color: 'black',
     marginBottom: 25,
     alignItems: 'center', 
     justifyContent: 'center',
   },
-  refreshbutton: {
-      width: 100,
-      height: 60,
-      backgroundColor: 'rgba(0, 0, 0, 0.4)',
-      padding: 20,
-    
-  },
+
 });
 
-// register the root component
-// this will be used from client.js by r360.createRoot('BasicAppTemplate' ...)
+
 AppRegistry.registerComponent('BasicAppTemplate', () => BasicAppTemplate);
+AppRegistry.registerComponent('BackButton', () => BackButton);

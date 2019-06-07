@@ -142,4 +142,5 @@ const styles = StyleSheet.create({
   },
 });
 
+
 module.exports = InfoButton;
